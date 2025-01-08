@@ -1,0 +1,12 @@
+﻿@model BlogMe.Models.BlogPost
+
+@{
+    ViewData["Title"] = "Delete Blog Post";
+}
+
+<h2>Are you sure you want to delete the blog post titled "@Model.Title"?</h2>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("Index", "Blog")" class="btn btn-secondary">Cancel</a>
+</form>
