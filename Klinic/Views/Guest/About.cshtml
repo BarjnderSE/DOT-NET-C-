@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_LayoutGuest.cshtml";
+}
+
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Column: Images -->
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column">
+                    <img class="img-fluid rounded w-75 align-self-end" src="~/img/about-1.jpg" alt="About Us Image 1">
+                    <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="~/img/about-2.jpg" alt="About Us Image 2" style="margin-top: -25%;">
+                </div>
+            </div>
+
+            <!-- Right Column: Content -->
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
+                <h1 class="mb-4">Why You Should Trust Us? Get to Know About Us!</h1>
+                <p>We are dedicated to providing the best care with a focus on quality, professionalism, and compassion. Our expert team is here to assist you every step of the way in achieving better health.</p>
+                <p class="mb-4">Our services stand out because we focus on your well-being with personalized care plans tailored to your needs. We combine expertise and innovative medical technologies to ensure the best outcomes for our patients.</p>
+
+                <!-- List of Benefits -->
+                <p><i class="far fa-check-circle text-primary me-3"></i> Quality healthcare services</p>
+                <p><i class="far fa-check-circle text-primary me-3"></i> Experienced and qualified doctors</p>
+                <p><i class="far fa-check-circle text-primary me-3"></i> Dedicated medical research professionals</p>
+
+                <!-- Call to Action Button -->
+                <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="@Url.Action("Contact", "Guest")">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
