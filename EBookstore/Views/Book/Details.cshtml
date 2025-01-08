@@ -1,0 +1,21 @@
+﻿@model EBookStore.Models.Book
+
+@{
+    ViewBag.Title = "Book Details";
+}
+
+<h2>@Model.Title</h2>
+<p><strong>Author:</strong> @Model.Author</p>
+<p><strong>Price:</strong> $@Model.Price</p>
+
+@if (!string.IsNullOrEmpty(Model.ImagePath))
+{
+    <img src="@Model.ImagePath" alt="@Model.Title" style="max-width: 300px;" />
+}
+
+<!-- Back to Book List Button -->
+<a asp-action="Index" class="btn btn-secondary mt-3">Back to Book List</a>
+
+<!-- View Details Button (This is unnecessary on the Details page, because you're already viewing the details of a specific book) -->
+<!-- Commented out because it doesn't make sense here -->
+<!-- <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-primary btn-sm">View Details</a> -->

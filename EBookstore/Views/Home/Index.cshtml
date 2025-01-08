@@ -1,0 +1,56 @@
+﻿@model IEnumerable<EBookStore.Models.Book>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-4">
+    <!-- Left Side: Display Books -->
+    <div class="col-md-8">
+        <h2>Available Books</h2>
+        <div class="row">
+            @foreach (var book in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        @if (!string.IsNullOrEmpty(book.ImagePath))
+                        {
+                            <img src="@book.ImagePath" class="card-img-top" alt="@book.Title" style="height: 300px; object-fit: fill;">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@book.Title</h5>
+                            <p class="card-text">Author: @book.Author</p>
+                            <p class="card-text"><strong>Price:</strong> $@book.Price</p>
+                            <a asp-action="Details" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-primary btn-sm">Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Right Side: Login/Register Form -->
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Welcome to EBook Store</h4>
+                <p class="card-text">Login to place books for sale or purchase your favorite books.</p>
+
+                <form asp-action="Login" asp-controller="User" method="post">
+                    <div class="form-group mb-3">
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" required />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+                <hr />
+                <p>Don't have an account?</p>
+                <a asp-action="Register" asp-controller="User" class="btn btn-success w-100">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
