@@ -1,0 +1,27 @@
+﻿@page
+@model Portfolio.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<div class="container">
+    <h1>Contact Me</h1>
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="alert alert-success">@Model.SuccessMessage</div>
+    }
+    <form method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="Form.Name" value="@Model.Form?.Name" />
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="Form.Email" value="@Model.Form?.Email" />
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="Form.Message">@Model.Form?.Message</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
