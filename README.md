@@ -29,9 +29,8 @@ Here are some of the projects I built using .NET MVC:
 - Connecting the frontend with backend functionality.
 
 ### What I Am Learning
-- Advanced Entity Framework features (e.g., migrations, LINQ queries).
-- Securing applications with authentication and authorization.
-- Optimizing performance and scalability in .NET applications.
+- Advanced 
+
 
 ---
 
