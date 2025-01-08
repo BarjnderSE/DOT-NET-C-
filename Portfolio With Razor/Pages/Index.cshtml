@@ -1,0 +1,94 @@
+﻿@page
+@model Portfolio.Pages.Model.IndexModel;
+
+@{
+    ViewData["Title"] = "Portfolio";
+}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Left Side: Animated Text -->
+        <div class="col-md-6 text-center text-md-start">
+            <h1 class="display-4">Hi, I'm <span class="text-primary"></span>Barjinder Singh</h1>
+            <h2 id="animated-text" class="mt-3"></h2>
+            <p class="lead mt-4">
+                Passionate about crafting efficient, scalable, and innovative software solutions.
+            </p>
+            <a class="btn btn-primary btn-lg mt-3" href="/Projects">View My Work</a>
+        </div>
+
+        <!-- Right Side: Image -->
+        <div class="col-md-6 text-center">
+            <img src="~/images/pf.jpg" class="img-fluid rounded shadow-lg" alt="Hero Image">
+        </div>
+    </div>
+</div>
+
+<!-- Technologies Section -->
+<div class="container my-5">
+    <h3 class="text-center mb-4">Technologies I Work With</h3>
+    <div class="row text-center">
+        <!-- Example Technology -->
+        <div class="col-6 col-md-3">
+            <img src="~/images/dotnet.png" class="tech-icon" alt="ASP.NET">
+            <p>ASP.NET</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/python.png" class="tech-icon" alt="Python">
+            <p>Python</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/Azure.png" class="tech-icon" alt="Azure">
+            <p>Azure</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/sql.png" class="tech-icon" alt="SQL">
+            <p>SQL</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/tableau.png" class="tech-icon" alt="Tableau">
+            <p>Tableau</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/html.png" class="tech-icon" alt="HTML">
+            <p>HTML</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/html.png" class="tech-icon" alt="HTML">
+            <p>HTML</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/css.png" class="tech-icon" alt="CSS">
+            <p>CSS</p>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="~/images/Untitled3.png" class="tech-icon" alt="C#">
+            <p>C#</p>
+        </div>
+        <!-- Add more technologies as needed -->
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com" class="text-decoration-none text-primary">LinkedIn</a>.</p>
+    </div>
+</footer>
+
+<!-- Scripts for animation -->
+<script>
+    // Simple animation for the "animated-text" element
+    let phrases = ["ASP.NET Developer", "Software Engineer", "Python Enthusiast", "Full-Stack Developer"];
+    let currentPhraseIndex = 0;
+    let textElement = document.getElementById('animated-text');
+
+    function changePhrase() {
+        textElement.textContent = phrases[currentPhraseIndex];
+        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+    }
+
+    setInterval(changePhrase, 2000); // Change text every 2 seconds
+    changePhrase(); // Initial call to display text right away
+</script>
