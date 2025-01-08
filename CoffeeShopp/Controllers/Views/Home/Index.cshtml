@@ -1,0 +1,55 @@
+﻿@model IEnumerable<CoffeeShopp.Models.Product>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Use the shared layout
+}
+
+<section class="hero-section" style="position: relative; height: 100vh; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://archello.s3.eu-central-1.amazonaws.com/images/2020/02/13/Kim-Caf-------Industrial-Coffee-House-Design--7.1581606358.8077.jpg'); background-size: cover; background-position: center;">
+    <div class="container text-center text-white d-flex align-items-center justify-content-center" style="height: 100%;">
+        <div>
+            <h1 class="display-1 fw-bold">The Coffee House</h1>
+            <p class="lead mt-3">Where every cup is a fresh brew of perfection</p>
+            <a class="btn btn-lg btn-warning text-dark mt-4 px-5 py-3" asp-controller="Products" asp-action="Shop" style="font-size: 1.2rem;">
+                <i class="fas fa-shopping-bag me-2"></i> Shop Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="top-selling py-5" style="background-color: #f7f7f7;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-4" style="color: #4A90E2;">Top Selling</h2>
+            <p class="text-muted">Make your mornings better with our top-selling products.</p>
+        </div>
+
+        <div class="row g-4">
+            @foreach (var product in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="card shadow-lg border-0 h-100" style="border-radius: 15px;">
+                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="border-radius: 15px 15px 0 0; height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" style="color: #333;">@product.Name</h5>
+                            <p class="card-text text-muted">@product.Detail</p>
+                            <p class="card-text"><strong>Price:</strong> $@product.Price</p>
+                            <a href="@Url.Action("Details", "Products", new { id = product.Id })" class="btn btn-outline-primary w-100 mt-2">
+                                <i class="fas fa-info-circle me-1"></i> View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="footer py-4" style="background-color: #4A90E2; color: white;">
+    <div class="container text-center">
+        <p class="mb-0">&copy; 2025 - All Rights Reserved | <span class="fw-bold">CoffeeShopp</span></p>
+        <p class="mt-1">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </p>
+    </div>
+</section>

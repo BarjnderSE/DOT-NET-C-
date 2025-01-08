@@ -1,0 +1,63 @@
+﻿@model IEnumerable<CoffeeShopp.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Use the shared layout
+}
+
+<section data-bs-version="5.1" class="info3 cid-tsEY2vwh5a mbr-parallax-background" id="info3-b">
+    <div class="mbr-overlay" style="opacity:0.8; background-image: linear-gradient(to bottom, #4A90E2, #003366);"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card col-12 col-lg-10 bg-light text-dark shadow-lg">
+                <div class="card-wrapper">
+                    <div class="card-box align-center">
+                        <h4 class="card-title mbr-fonts-style align-center mb-4 display-1 text-uppercase" style="color: #003366;">
+                            <strong>Have a Coffee with Us</strong>
+                        </h4>
+                        <p class="text-muted">Discover the perfect brew for every mood</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content2 cid-tsEZVFGbrL" id="content2-g">
+    <div class="container">
+        <div class="mbr-section-head mb-4">
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-center display-5 text-uppercase" style="color: #4A90E2;">
+                The secret to a perfect cup, every time...
+            </h5>
+        </div>
+        <div class="row">
+            @foreach (var product in Model.Where(p => !string.IsNullOrEmpty(p.ImageUrl)))
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm" style="border-radius: 10px; background-color: #f8f9fa;">
+                        <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="border-radius: 10px 10px 0 0;">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">@product.Name</h5>
+                            
+                            <p class="card-text"><strong>Price:</strong> $@product.Price</p>
+                            <a href="@Url.Action("AddToCart", "Cart", new { id = product.Id })" class="btn btn-primary btn-block" style="background-color: #4A90E2; border: none;">
+                                <span class="mobi-mbri mobi-mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="footer7 cid-tsQdrs3Vrj" once="footers" id="footer7-13">
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7 text-light">
+                    © Copyright 2025&nbsp; - All Rights Reserved | <span style="color: #4A90E2;">CoffeeShopp</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

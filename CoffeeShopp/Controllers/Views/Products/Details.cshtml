@@ -1,0 +1,47 @@
+﻿@using CoffeeShopp.Models
+@model Product
+
+<div class="container mt-5">
+    <div class="card-wrapper">
+        <div class="row align-items-center">
+            <!-- Image Section -->
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+                <div class="image-wrapper">
+                    <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid rounded" style="max-height: 400px; object-fit: cover;">
+                </div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="col-12 col-lg-6">
+                <div class="text-box">
+                    <!-- Product Title -->
+                    <h5 class="mbr-title mbr-fonts-style display-2 mb-3">
+                        <strong>@Model.Name</strong>
+                    </h5>
+
+                    <!-- Product Details -->
+                    <p class="mbr-text mbr-fonts-style display-7 mb-4">
+                        <h1> @Model.Detail</h1>
+                    </p>
+
+                    <!-- Price Section -->
+                    <div class="cost mb-4">
+                        <span class="currentcost mbr-fonts-style pr-2 display-3">
+                            <strong>@Model.Price.ToString("c")</strong>
+                        </span>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <div class="mbr-section-btn pt-3">
+                        <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-pId="@Model.Id" class="btn btn-primary display-4">
+                            <span class="mbrib-cart-add mbr-iconfont mbr-iconfont-btn"></span>Add to Cart&nbsp;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
